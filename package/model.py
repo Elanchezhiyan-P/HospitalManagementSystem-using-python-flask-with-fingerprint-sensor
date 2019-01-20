@@ -42,7 +42,4 @@ doc_address TEXT NOT NULL);''')
 conn.execute('''CREATE TABLE if not exists appointment
 (app_id INTEGER PRIMARY KEY AUTOINCREMENT,
 pat_id INTEGER NOT NULL,
-doc_id INTEGER NOT NULL,
-appointment_date DATE NOT NULL,
-FOREIGN KEY(pat_id) REFERENCES patient(pat_id),
-FOREIGN KEY(doc_id) REFERENCES doctor(doc_id));''')
+FOREIGN KEY(pat_id) REFERENCES patient(pat_id);''')
