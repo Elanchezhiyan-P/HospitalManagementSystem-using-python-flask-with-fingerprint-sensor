@@ -27,13 +27,14 @@ class Patients(Resource):
         pat_insurance_no = patientInput['pat_insurance_no']
         pat_ph_no = patientInput['pat_ph_no']
         pat_address = patientInput['pat_address']
-        finger_print_number = self.saveFingerprint()
+        finger_print_number = Patients.saveFingerprint()
         patientInput['pat_id']=conn.execute('''INSERT INTO patient(pat_first_name,pat_last_name,pat_insurance_no,pat_ph_no,pat_address,pat_fingerprint_id)
             VALUES(?,?,?,?,?,?)''', (pat_first_name, pat_last_name, pat_insurance_no,pat_ph_no,pat_address,finger_print_number)).lastrowid
         conn.commit()
         return patientInput
     
-    def saveFingerPrint(self):
+    @staticmethod
+    def saveFingerPrint():
         return enroll.enroll_finger()
 
 class Patient(Resource):
