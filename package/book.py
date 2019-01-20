@@ -10,6 +10,6 @@ class BookAppointment(Resource):
         fingerprint_id = fsearch.search()
         patients = conn.execute("SELECT * FROM patient  where pat_fingerprint_id = ?",(fingerprint_id,)).fetchall()
         print patients
-        appointment = conn.execute('''INSERT INTO appointment(pat_id) VALUES(?)''', (patients['pat_id'])).lastrowid
+        appointment = conn.execute('''INSERT INTO appointment(pat_id) VALUES(?)''', (patients[0]['pat_id'])).lastrowid
         conn.commit()
         return patients,appointment
