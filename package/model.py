@@ -28,7 +28,8 @@ pat_last_name TEXT NOT NULL,
 pat_insurance_no TEXT NOT NULL,
 pat_ph_no TEXT NOT NULL,
 pat_date DATE DEFAULT (datetime('now','localtime')),
-pat_address TEXT NOT NULL);''')
+pat_address TEXT NOT NULL,
+pat_fingerprint_id TEXT NOT NULL);''')
 
 conn.execute('''CREATE TABLE if not exists doctor
 (doc_id INTEGER PRIMARY KEY AUTOINCREMENT,
