@@ -4,7 +4,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 import package.fingerprint_search as fsearch
 
 
-class Patients(Resource):
+class BookAppointment(Resource):
     def get(self):
         """Api to retive all the patient from the database"""
         fingerprint_id = fsearch.search()
