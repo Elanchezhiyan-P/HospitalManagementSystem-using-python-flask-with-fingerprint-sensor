@@ -4,7 +4,7 @@
 from flask_restful import Resource, Api, request
 from package.model import conn
 from pyfingerprint.pyfingerprint import PyFingerprint
-import package.model.fingerprint_enroll as enroll
+import package.fingerprint_enroll as enroll
 
 
 class Patients(Resource):
