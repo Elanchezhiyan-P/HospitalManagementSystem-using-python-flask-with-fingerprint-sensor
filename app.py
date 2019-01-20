@@ -7,6 +7,7 @@ from package.patient import Patients, Patient
 from package.doctor import Doctors, Doctor
 from package.appointment import Appointments, Appointment
 from package.common import Common
+from package.book import BookAppointment
 import json
 
 
@@ -23,6 +24,7 @@ api.add_resource(Doctor, '/doctor/<int:id>')
 api.add_resource(Appointments, '/appointment')
 api.add_resource(Appointment, '/appointment/<int:id>')
 api.add_resource(Common, '/common')
+api.add_resource(BookAppointment,'/BookAppointment')
 
 # Routes
 
