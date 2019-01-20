@@ -8,8 +8,7 @@ class BookAppointment(Resource):
     def get(self):
         """Api to retive all the patient from the database"""
         fingerprint_id = fsearch.search()
-        patients = conn.execute("SELECT * FROM patient  where pat_fingerprint_id = ?",(fingerprint_id,)).fetchall()
-        print patients
-        appointment = conn.execute('''INSERT INTO appointment(pat_id) VALUES(?)''', (patients[0]['pat_id'])).lastrowid
+        patients = conn.execute("SELECT pat_id FROM patient  where pat_fingerprint_id = ?",(fingerprint_id,)).fetchall()
+        appointment = conn.execute('''INSERT INTO appointment(pat_id) VALUES(?)''', (patients[0])).lastrowid
         conn.commit()
         return patients,appointment
