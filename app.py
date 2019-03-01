@@ -1,4 +1,4 @@
-#Tushar Borole
+#Elanchezhiyan P
 #Python 2.7
 
 from flask import Flask,send_from_directory,render_template
@@ -21,10 +21,10 @@ api.add_resource(Patients, '/patient')
 api.add_resource(Patient, '/patient/<int:id>')
 api.add_resource(Doctors, '/doctor')
 api.add_resource(Doctor, '/doctor/<int:id>')
-api.add_resource(Appointments, '/appointment')
-api.add_resource(Appointment, '/appointment/<int:id>')
+api.add_resource(BookAppointments, '/BookAppointment')
+api.add_resource(BookAppointment, '/BookAppointment/<int:id>')
 api.add_resource(Common, '/common')
-api.add_resource(BookAppointment,'/BookAppointment')
+
 
 # Routes
 

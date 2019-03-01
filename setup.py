@@ -6,7 +6,7 @@ setup(
     packages=['package'],
     url='',
     license='',
-    author='Tushar',
-    author_email='tusharborole@ymail.com',
+    author='Elanchezhiyan',
+    author_email='elanche97@gmail.com'
     description='HospitalManagementSystem for college python course'
 )
